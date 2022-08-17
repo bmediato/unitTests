@@ -13,15 +13,17 @@
 
 const average = (array) => {
   let soma = 0;
-  let media;
-  for (let index = 0; index < array.length; index += 1) {
-    if (typeof array[index] !== 'number' || array.length === 0) {
-      return 'undefined';
-    }
-    soma += array[[index]];
+  let media = 0;
+  if ( array.length === 0) {
+    return undefined;
   }
-   media = soma / array.length;
-  return media;
+  for (let num of array) {
+    if(typeof num !== 'number' ){
+      return undefined;
+    }
+      soma += num;
+  }
+  return  Math.round(media = soma / (array.length));;
 };
 
 module.exports = average;
